@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  
-  <title>Restaurant Apps Starter Project</title>
-</head>
-<body>
-  <h1>Restaurant Apps Starter Project</h1>
-  <p>Hallo coders! Anda berhasil menjalankan starter project.</p>
-  <p>Jangan lupa untuk menggunakan salah satu gambar yang berada pada ./images/heros sebagai background hero elemen</p>
-  <img src="./images/heros/hero-image_1.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_2.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_3.jpg" width="450" alt="">
-  <img src="./images/heros/hero-image_4.jpg" width="450" alt="">
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nusantara - Explore Indonesian Restaurant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <p class="navbar__brand">Nusantara</p>
+        <ul class="navbar__list">
+          <li class="navbar__item active"><a href="/">Home</a></li>
+          <li class="navbar__item"><a href="#">Favorite</a></li>
+          <li class="navbar__item"><a href="https://www.agreytosira.my.id/" target="_blank" rel="noopener noreferrer">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__content">
+          <h1>Jelajahi Berbagai Macam Rasa di Indonesia</h1>
+          <p>Jelajahi Ragam Cita Rasa beragam masakan khas Indonesia dari berbagai Restoran bersama <strong>Nusantara</strong>. Temukan Kelezatan dari Sabang sampai Merauke!</p>
+          <a href="#restaurant" class="btn-primary">Lihat Katalog Restoran <i class="ri-arrow-right-up-line"></i></a>
+        </div>
+      </section>
+      <section class="restaurant" id="restaurant">
+        <div class="restaurant__header">
+          <h2>Jelajahi Restoran</h2>
+          <p>Jelajahi berbagai restoran dengan masakan khas Indonesia</p>
+        </div>
+        <div class="restaurant__content">
+          <div class="restaurant-card">
+            <div class="restaurant-card__thumbnail">
+              <img src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Restaurant" />
+              <span class="restaurant-card__city">Bandung</span>
+            </div>
+            <div class="restaurant-card__body">
+              <div class="restaurant-card__rating"><i class="ri-star-fill"></i> 3.5</div>
+              <div class="restaurant-card__name"><h5>La Casa De Papel</h5></div>
+              <div class="restaurant-card__desc">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat blanditiis accusantium iusto porro ipsa veritatis aliquid commodi delectus adipisci illo!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Copyright © 2023 - Nusantara | Developed by <strong>Agrey Tosira</strong></p>
+    </footer>
+  </body>
 </html>

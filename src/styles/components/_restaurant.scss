@@ -1,0 +1,98 @@
+.restaurant {
+  margin: 10rem auto;
+  max-width: 90%;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 4rem;
+    text-align: center;
+
+    h2 {
+      color: $gold;
+    }
+
+    p {
+      color: $textSecondary;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  &-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover .restaurant-card__thumbnail img {
+      transform: scale(1.1);
+    }
+
+    &__desc {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5; /* Batasi hingga 5 baris */
+      -webkit-box-orient: vertical;
+    }
+
+    &__rating {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      i {
+        color: $gold;
+      }
+
+      font-weight: 600;
+    }
+
+    &__body {
+      height: 100%;
+      padding: 1.5rem;
+      background-color: $div;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+
+      p {
+        line-height: 1.5;
+        font-size: 14px;
+        color: $textSecondary;
+      }
+    }
+
+    &__thumbnail {
+      position: relative;
+      overflow: hidden;
+
+      img {
+        aspect-ratio: 4/2;
+        width: 100%;
+        transition: all 0.3s ease;
+        object-fit: cover;
+      }
+    }
+
+    &__city {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: lighten($orange, 30%);
+      color: darken($orange, 5%);
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+}

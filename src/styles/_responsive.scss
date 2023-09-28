@@ -1,5 +1,95 @@
+@media screen and (min-width: 500px) {
+  .hero {
+    &__content {
+      max-width: 70%;
+    }
+  }
+
+  .restaurant {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 36px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  h4 {
+    font-size: 24px;
+  }
+
+  h5 {
+    font-size: 20px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+
+  header {
+    .navbar {
+      &__list {
+        transform: translateY(0);
+        opacity: 1;
+        position: relative;
+        height: unset;
+        display: inline-block;
+        width: auto;
+
+        a {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  .hero {
+    &__content {
+      max-width: 60%;
+    }
+  }
+
+  .restaurant {
+    &__content {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// Desktop
 @media screen and (min-width: 1200px) {
-  hero {
-    width: 1000px;
+  .hero {
+    min-width: 1000px;
+
+    &__content {
+      max-width: 45%;
+    }
+  }
+
+  .restaurant,
+  .navbar,
+  footer p {
+    max-width: 1200px !important;
   }
 }

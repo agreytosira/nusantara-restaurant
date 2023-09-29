@@ -7,7 +7,7 @@ const main = () => {
 
     restaurants.forEach((restaurant) => {
       restaurantContent.innerHTML += `
-      <div class="restaurant-card" tabindex="0">
+      <a href="#" class="restaurant-card">
         <div class="restaurant-card__thumbnail">
           <img src="${restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
           <span class="restaurant-card__city">${restaurant.city}</span>
@@ -19,7 +19,7 @@ const main = () => {
             <p>${restaurant.description}</p>
           </div>
         </div>
-      </div>
+      </a>
     `
     })
   }

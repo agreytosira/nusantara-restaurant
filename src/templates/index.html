@@ -11,9 +11,10 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet" />
   </head>
   <body>
+    <a href="#main" class="btn-skiptocontent">Skip to Content <i class="ri-arrow-right-down-line"></i></a>
     <header>
       <nav class="navbar">
-        <p class="navbar__brand">Nusantara</p>
+        <a class="navbar__brand" href="/">Nusantara</a>
         <button class="btn-toggle"><i class="ri-menu-line"></i></button>
         <ul class="navbar__list">
           <li class="navbar__item active"><a href="/">Home</a></li>
@@ -26,34 +27,32 @@
       <section class="hero">
         <div class="hero__content">
           <h1>Jelajahi Berbagai Macam Rasa di Indonesia</h1>
-          <p>Jelajahi Ragam Cita Rasa beragam masakan khas Indonesia dari berbagai Restoran bersama <strong>Nusantara</strong>. Temukan Kelezatan dari Sabang sampai Merauke!</p>
-          <a href="#restaurant" class="btn-primary">Lihat Katalog Restoran <i class="ri-arrow-right-up-line"></i></a>
+          <p>Jelajahi Beragam restoran dari seluruh indonesia bersama <strong>Nusantara</strong>. Temukan Kelezatan dari Sabang sampai Merauke!</p>
+          <a href="#main" class="btn-primary">Lihat Katalog Restoran <i class="ri-arrow-right-up-line"></i></a>
         </div>
       </section>
-      <section class="restaurant" id="restaurant">
+      <section class="restaurant" id="main">
         <div class="restaurant__header">
           <h2>Jelajahi Restoran</h2>
-          <p>Jelajahi berbagai restoran dengan masakan khas Indonesia</p>
+          <p>Jelajahi berbagai restoran terbaik di Indonesia</p>
         </div>
-        <div class="restaurant__content">
-          <div class="restaurant-card">
-            <div class="restaurant-card__thumbnail">
-              <img src="https://restaurant-api.dicoding.dev/images/medium/41" alt="Restaurant" />
-              <span class="restaurant-card__city">Bandung</span>
-            </div>
-            <div class="restaurant-card__body">
-              <div class="restaurant-card__rating"><i class="ri-star-fill"></i> 3.5</div>
-              <div class="restaurant-card__name"><h5>La Casa De Papel</h5></div>
-              <div class="restaurant-card__desc">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat blanditiis accusantium iusto porro ipsa veritatis aliquid commodi delectus adipisci illo!</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="restaurant__content"></div>
       </section>
     </main>
-    <footer>
-      <p>Copyright © 2023 - Nusantara | Developed by <strong>Agrey Tosira</strong></p>
+    <footer class="footer">
+      <ul class="footer-social">
+        <li>
+          <a href="#"><i class="ri-github-fill"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="ri-facebook-box-fill"></i></a>
+        </li>
+      </ul>
+      <p>Copyright © 2023 - Nusantara</p>
+      <p>Developed by <strong>Agrey Tosira</strong> for Dicoding Submission</p>
     </footer>
   </body>
 </html>

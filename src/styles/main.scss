@@ -22,8 +22,11 @@ body {
 }
 
 a,
-button {
+button,
+input[type='text'],
+textarea {
   min-width: 44px;
+  min-height: 44px;
 }
 
 h1,
@@ -65,8 +68,10 @@ p {
 }
 
 .btn-primary {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   padding: 0.75rem 2rem;
+  gap: 0.5rem;
   font-weight: 600;
   font-size: 14px;
   color: $white;
@@ -84,6 +89,9 @@ p {
   aspect-ratio: 1/1;
   width: 44px;
   height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 0.25rem;
   background-color: $div;
   color: $white;
@@ -91,6 +99,33 @@ p {
   outline: 0;
   font-size: 24px;
   z-index: 100;
+}
+
+.btn-skiptocontent {
+  position: fixed;
+  z-index: -1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 14px;
+  color: $white;
+  border-radius: 99px;
+  background-color: $orange;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+
+  &:hover {
+    background-color: darken($color: $orange, $amount: 10%);
+  }
+
+  &:focus {
+    z-index: 999;
+    top: 6rem;
+    opacity: 1;
+  }
 }
 
 @import './components/header.scss';

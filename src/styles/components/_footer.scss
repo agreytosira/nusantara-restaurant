@@ -1,11 +1,39 @@
-footer {
+.footer {
   width: 100%;
   background-color: $div;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 
   p {
     max-width: 90%;
     margin: auto;
     text-align: center;
+  }
+
+  &-social {
+    display: flex;
+    gap: 0.25rem;
+
+    li {
+      list-style: none;
+      align-items: center;
+
+      a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        text-decoration: none;
+        font-size: 24px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: $orange;
+        }
+      }
+    }
   }
 }

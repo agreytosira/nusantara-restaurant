@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-apps",
+  "name": "nusantara_restaurant",
   "version": "1.0.0",
-  "description": "",
+  "description": "Explore various restaurants in Indonesia with us",
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",

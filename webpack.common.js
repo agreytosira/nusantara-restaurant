@@ -39,7 +39,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new FaviconsWebpackPlugin('src/public/images/favicon.svg'),
+    new FaviconsWebpackPlugin('./src/public/images/favicon.png'),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html')

@@ -1,6 +1,9 @@
-import data from '../../public/data/DATA.json'
+import CONFIG from '../../public/global/config'
+import DATA from '../../public/data/restaurants'
 
-const main = () => {
+const main = async () => {
+  const restaurants = await DATA.getAllRestaurants()
+
   function renderRestaurants(restaurants) {
     const restaurantContent = document.querySelector('.restaurant__content')
     restaurantContent.innerHTML = ''
@@ -9,7 +12,7 @@ const main = () => {
       restaurantContent.innerHTML += `
       <a href="#" class="restaurant-card">
         <div class="restaurant-card__thumbnail">
-          <img src="${restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
+        <img src="${CONFIG.API_ENDPOINT}images/small/${restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
           <span class="restaurant-card__city">${restaurant.city}</span>
         </div>
         <div class="restaurant-card__body">
@@ -24,7 +27,7 @@ const main = () => {
     })
   }
 
-  renderRestaurants(data.restaurants)
+  renderRestaurants(restaurants)
 
   const btnToggle = document.querySelector('.btn-toggle')
   const navbarList = document.querySelector('.navbar__list')

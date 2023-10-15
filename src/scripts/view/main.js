@@ -12,7 +12,7 @@ const main = async () => {
       restaurantContent.innerHTML += `
       <a href="#" class="restaurant-card">
         <div class="restaurant-card__thumbnail">
-        <img src="${CONFIG.API_ENDPOINT}images/small/${restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
+        <img src="${CONFIG.BASE_IMAGE_URL}/${restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
           <span class="restaurant-card__city">${restaurant.city}</span>
         </div>
         <div class="restaurant-card__body">

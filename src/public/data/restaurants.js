@@ -3,7 +3,7 @@ import CONFIG from '../global/config'
 const DATA = {
   async getAllRestaurants() {
     try {
-      const response = await fetch(`${CONFIG.API_ENDPOINT}/list`)
+      const response = await fetch(`${CONFIG.BASE_URL}/list`)
 
       if (!response.ok) {
         throw new Error('Terjadi kesalahan saat mengambil data restoran')

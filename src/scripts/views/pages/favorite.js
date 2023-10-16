@@ -17,6 +17,8 @@ const Favorite = {
     const data = await FavRestoIdb.getAllResto()
     const favRestoContainer = document.querySelector('.restaurant__content')
     document.querySelector('.hero').style.display = 'none'
+    document.querySelector('.navbar__item').classList.remove('active')
+    document.querySelectorAll('.navbar__item')[1].classList.add('active')
 
     // if data empty
     if (data.length === 0) {

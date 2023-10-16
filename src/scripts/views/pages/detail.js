@@ -46,7 +46,9 @@ const Detail = {
     const mainContainer = document.querySelector('#main-container')
     const detailContainer = document.querySelector('.detail')
     document.querySelector('.hero').style.display = 'none'
-    document.querySelector('.navbar__item').classList.remove('active')
+    document.querySelectorAll('.navbar__item').forEach((button) => {
+      button.classList.remove('active')
+    })
 
     // change main display to spinner
     mainContainer.style.display = 'none'

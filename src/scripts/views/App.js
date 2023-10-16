@@ -20,6 +20,7 @@ class App {
   }
 
   async renderPage() {
+    this._drawer.classList.remove('active')
     const url = UrlParser.parseActiveUrlWithCombiner()
     const page = routes[url]
     this._content.innerHTML = await page.render()

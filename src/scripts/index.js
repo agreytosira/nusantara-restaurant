@@ -15,8 +15,6 @@ import '../styles/main.scss'
 // js
 import App from './views/App'
 import swRegister from './utils/sw-register'
-import { WebSocketInitiator } from './utils/websocket-initiator'
-import CONFIG from './global/config'
 // components
 import './components/navbar'
 import './components/hero'
@@ -37,5 +35,4 @@ window.addEventListener('hashchange', () => {
 window.addEventListener('load', () => {
   app.renderPage()
   swRegister()
-  WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER)
 })

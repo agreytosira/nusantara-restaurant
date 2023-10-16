@@ -1,48 +1,59 @@
-const path = require('path')
+/* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path')
+const { InjectManifest } = require('workbox-webpack-plugin')
 
 module.exports = {
-  entry: {
-    app: path.resolve(__dirname, 'src/scripts/index.js')
-  },
+  entry: path.resolve(__dirname, 'src/scripts/index.js'),
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.(jpg|png|gif|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'images/'
-          }
-        }
-      },
-      {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          {
+            loader: 'style-loader'
+          },
           {
             loader: 'css-loader',
             options: {
               url: false
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader'
+          }
         ]
       }
     ]
   },
   plugins: [
-    new FaviconsWebpackPlugin('./src/public/images/favicon.png'),
     new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/templates/index.html')
+      favicon: path.resolve(__dirname, 'src/public/favicon.png')
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/public/'),
+          to: path.resolve(__dirname, 'dist/')
+        }
+      ]
+    }),
+    new InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
+      swDest: 'sw.js'
     })
+    // new GenerateSW({
+    //   // these options encourage the ServiceWorkers to get in there fast
+    //   // and not allow any straggling "old" SWs to hang around
+    //   clientsClaim: true,
+    //   skipWaiting: true,
+    // }),
   ]
 }

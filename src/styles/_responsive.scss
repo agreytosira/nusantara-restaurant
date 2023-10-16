@@ -11,6 +11,12 @@
       gap: 1.5rem;
     }
   }
+
+  .detail,
+  .review__form {
+    max-width: 80%;
+    margin: 0 auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -75,6 +81,11 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+  .detail,
+  .review__form {
+    max-width: 70%;
+  }
 }
 
 // Desktop
@@ -91,5 +102,10 @@
   .navbar,
   footer p {
     max-width: 1200px !important;
+  }
+
+  .detail,
+  .review__form {
+    max-width: 60%;
   }
 }

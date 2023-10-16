@@ -79,6 +79,9 @@ p {
   background-color: $orange;
   text-decoration: none;
   transition: all 0.3s ease;
+  outline: none;
+  border: none;
+  cursor: pointer;
 
   &:hover {
     background-color: darken($color: $orange, $amount: 10%);
@@ -128,6 +131,9 @@ p {
   }
 }
 
+@import './components/like.scss';
+@import './components/loader.scss';
+@import './components/detail.scss';
 @import './components/header.scss';
 @import './components/restaurant.scss';
 @import './components/hero.scss';

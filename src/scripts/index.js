@@ -1,7 +1,41 @@
 import 'regenerator-runtime'
 import '../styles/main.scss'
-import main from './view/main.js'
-import '../public/images/logo-nusantara.svg'
-import '../public/images/heros/hero-image_2.jpg'
+// css
+// import '../styles/normalize.css';
+// import '../styles/root.css';
+// import '../styles/nav.css';
+// import '../styles/header.css';
+// import '../styles/main.css';
+// import '../styles/footer.css';
+// import '../styles/responsive.css';
+// import '../styles/spinner.css';
+// import '../styles/resto-detail.css'
+// import '../styles/resto-fav.css'
 
-document.addEventListener('DOMContentLoaded', main)
+// js
+import App from './views/App'
+import swRegister from './utils/sw-register'
+import { WebSocketInitiator } from './utils/websocket-initiator'
+import CONFIG from './global/config'
+// components
+import './components/navbar'
+import './components/hero'
+import './components/custom-footer'
+
+// init App
+const app = new App({
+  button: document.querySelector('.btn-toggle'),
+  drawer: document.querySelector('.navbar__list'),
+  content: document.querySelector('#main')
+})
+
+window.addEventListener('hashchange', () => {
+  document.querySelector('.container')
+  app.renderPage()
+})
+
+window.addEventListener('load', () => {
+  app.renderPage()
+  swRegister()
+  WebSocketInitiator.init(CONFIG.WEB_SOCKET_SERVER)
+})

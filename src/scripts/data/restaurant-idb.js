@@ -12,22 +12,22 @@ const openIdb = openDB(DB_NAME, DB_VERSION, {
   }
 })
 
-const FavRestoIdb = {
-  async getResto(id) {
+const FavRestaurantIdb = {
+  async getRestaurant(id) {
     return (await openIdb).get(OBJECT_STORE_NAME, id)
   },
 
-  async getAllResto() {
+  async getAllRestaurant() {
     return (await openIdb).getAll(OBJECT_STORE_NAME)
   },
 
-  async putResto(restaurant) {
+  async putRestaurant(restaurant) {
     return (await openIdb).put(OBJECT_STORE_NAME, restaurant)
   },
 
-  async deleteResto(id) {
+  async deleteRestaurant(id) {
     return (await openIdb).delete(OBJECT_STORE_NAME, id)
   }
 }
 
-export default FavRestoIdb
+export default FavRestaurantIdb

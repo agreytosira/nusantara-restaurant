@@ -1,4 +1,4 @@
-import FavRestoIdb from '../../data/restaurant-idb'
+import FavRestaurantIdb from '../../data/restaurant-idb'
 import restaurantCard from '../templates/restaurant-card'
 
 const Favorite = {
@@ -13,22 +13,22 @@ const Favorite = {
   },
 
   async afterRender() {
-    const data = await FavRestoIdb.getAllResto()
-    const favRestoContainer = document.querySelector('.restaurant__content')
+    const data = await FavRestaurantIdb.getAllRestaurant()
+    const favRestaurantContainer = document.querySelector('.restaurant__content')
     document.querySelector('.hero').style.display = 'none'
     document.querySelector('.navbar__item').classList.remove('active')
     document.querySelectorAll('.navbar__item')[1].classList.add('active')
 
     if (data.length === 0) {
-      favRestoContainer.classList.add('empty')
-      favRestoContainer.innerHTML = `
+      favRestaurantContainer.classList.add('empty')
+      favRestaurantContainer.innerHTML = `
         <h4>Currently no restaurant added to favorites</h4>
       `
     }
 
     data.forEach((restaurant) => {
-      favRestoContainer.classList.remove('empty')
-      favRestoContainer.innerHTML += restaurantCard(restaurant)
+      favRestaurantContainer.classList.remove('empty')
+      favRestaurantContainer.innerHTML += restaurantCard(restaurant)
     })
   }
 }

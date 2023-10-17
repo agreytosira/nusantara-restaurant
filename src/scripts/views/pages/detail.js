@@ -1,7 +1,7 @@
 import UrlParser from '../../routes/url-parser'
 import Spinner from '../templates/spinner'
 import RestaurantSource from '../../data/restaurant-source'
-import restoDetail from '../templates/restaurant-detail'
+import restaurantDetail from '../templates/restaurant-detail'
 import LikeButtonInitiator from '../../utils/like-button-initiator'
 import PostReview from '../../utils/post-review'
 import { initSwalError } from '../../utils/swal-initiator'
@@ -53,7 +53,7 @@ const Detail = {
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id)
-      detailContainer.innerHTML += restoDetail(data.restaurant)
+      detailContainer.innerHTML += restaurantDetail(data.restaurant)
 
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),

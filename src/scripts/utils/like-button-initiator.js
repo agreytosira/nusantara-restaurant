@@ -1,4 +1,4 @@
-import FavRestoIdb from '../data/restaurant-idb'
+import FavRestaurantIdb from '../data/restaurant-idb'
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/like-button'
 import { initSwalError, initSwalSuccess } from './swal-initiator'
 
@@ -14,7 +14,7 @@ const LikeButtonInitiator = {
     try {
       const { id } = this._restaurant
 
-      const restaurant = await FavRestoIdb.getResto(id)
+      const restaurant = await FavRestaurantIdb.getRestaurant(id)
 
       if (restaurant) {
         this._renderLikedButtonTemplate()
@@ -35,7 +35,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton')
 
     likeButton.addEventListener('click', async () => {
-      await FavRestoIdb.putResto(this._restaurant)
+      await FavRestaurantIdb.putRestaurant(this._restaurant)
       initSwalSuccess('Restaurant added to Favorite!')
       this._renderButton()
     })
@@ -47,7 +47,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton')
 
     likeButton.addEventListener('click', async () => {
-      await FavRestoIdb.deleteResto(this._restaurant.id)
+      await FavRestaurantIdb.deleteRestaurant(this._restaurant.id)
       initSwalSuccess('Restaurant removed from Favorite!')
       this._renderButton()
     })

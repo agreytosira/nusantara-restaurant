@@ -1,6 +1,6 @@
 import CONFIG from '../../global/config'
 
-const restoDetail = (restaurant) => `
+const restaurantDetail = (restaurant) => `
   <div class="detail__content">
     <div class="detail__header">
       <h2>${restaurant.name}</h2>
@@ -87,4 +87,4 @@ const restoDetail = (restaurant) => `
   </div>
 `
 
-export default restoDetail
+export default restaurantDetail

@@ -7,6 +7,7 @@ class MainContent extends HTMLElement {
     this.innerHTML = `
         <section class="restaurant" id="main"></section>
       `
+    this.setAttribute('id', 'main-content')
   }
 }
 

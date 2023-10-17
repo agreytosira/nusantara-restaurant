@@ -1,16 +1,5 @@
 import 'regenerator-runtime'
 import '../styles/main.scss'
-// css
-// import '../styles/normalize.css';
-// import '../styles/root.css';
-// import '../styles/nav.css';
-// import '../styles/header.css';
-// import '../styles/main.css';
-// import '../styles/footer.css';
-// import '../styles/responsive.css';
-// import '../styles/spinner.css';
-// import '../styles/resto-detail.css'
-// import '../styles/resto-fav.css'
 
 // js
 import App from './views/App'

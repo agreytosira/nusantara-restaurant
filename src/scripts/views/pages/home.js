@@ -1,6 +1,6 @@
 import Spinner from '../templates/spinner'
-import RestaurantSource from '../../data/resto-source'
-import restoCard from '../templates/resto-card'
+import RestaurantSource from '../../data/restaurant-source'
+import restaurantCard from '../templates/restaurant-card'
 import { initSwalError } from '../../utils/swal-initiator'
 
 const Home = {
@@ -30,7 +30,7 @@ const Home = {
 
       // loop restaurants data
       data.restaurants.forEach((restaurant) => {
-        listContainer.innerHTML += restoCard(restaurant)
+        listContainer.innerHTML += restaurantCard(restaurant)
       })
 
       // change spinner display to main

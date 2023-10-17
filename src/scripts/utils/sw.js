@@ -8,7 +8,7 @@ import { StaleWhileRevalidate, NetworkFirst } from 'workbox-strategies'
 import { ExpirationPlugin } from 'workbox-expiration'
 
 setCacheNameDetails({
-  prefix: 'resto-app',
+  prefix: 'nusantara',
   suffix: 'v1',
   precache: 'precache',
   runtime: 'runtime'
@@ -23,7 +23,7 @@ registerRoute(
   // Use a Network First caching strategy
   new NetworkFirst({
     // Put all cached files in a cache named 'pages'
-    cacheName: 'my-pages-cache'
+    cacheName: 'nusantara-pages-cache'
   })
 )
 
@@ -45,7 +45,7 @@ registerRoute(
 registerRoute(
   /^https:\/\/restaurant-api\.dicoding\.dev\/(?:(images))/,
   new NetworkFirst({
-    cacheName: 'image-cache',
+    cacheName: 'nusantara-image-cache',
     plugins: [
       new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 30,
@@ -59,7 +59,7 @@ registerRoute(
 registerRoute(
   ({ url }) => url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com',
   new StaleWhileRevalidate({
-    cacheName: 'my-google-fonts-cache',
+    cacheName: 'nusantara-google-fonts-cache',
     // Don't cache more than 50 items
     plugins: [new ExpirationPlugin({ maxEntries: 50 })]
   })
@@ -71,7 +71,7 @@ registerRoute(
   // Use a Stale While Revalidate caching strategy
   new StaleWhileRevalidate({
     // Put all cached files in a cache named 'assets'
-    cacheName: 'my-assets-cache'
+    cacheName: 'nusantara-assets-cache'
   })
 )
 

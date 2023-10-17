@@ -1,7 +1,7 @@
 import CONFIG from '../../global/config'
 
-const restoCard = (restaurant) => `
-    <a href="#/resto/${restaurant.id}" class="restaurant-card">
+const restaurantCard = (restaurant) => `
+    <a href="#/restaurant/${restaurant.id}" class="restaurant-card">
         <div class="restaurant-card__thumbnail">
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Foto Restoran ${restaurant.name}" />
           <span class="restaurant-card__city">${restaurant.city}</span>
@@ -16,4 +16,4 @@ const restoCard = (restaurant) => `
       </a>
   `
 
-export default restoCard
+export default restaurantCard

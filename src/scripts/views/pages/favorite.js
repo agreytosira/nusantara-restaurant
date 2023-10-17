@@ -1,5 +1,5 @@
-import FavRestoIdb from '../../data/resto-idb'
-import restoCard from '../templates/resto-card'
+import FavRestoIdb from '../../data/restaurant-idb'
+import restaurantCard from '../templates/restaurant-card'
 
 const Favorite = {
   async render() {
@@ -29,9 +29,9 @@ const Favorite = {
     }
 
     // display all fav resto
-    data.forEach((resto) => {
+    data.forEach((restaurant) => {
       favRestoContainer.classList.remove('empty')
-      favRestoContainer.innerHTML += restoCard(resto)
+      favRestoContainer.innerHTML += restaurantCard(restaurant)
     })
   }
 }

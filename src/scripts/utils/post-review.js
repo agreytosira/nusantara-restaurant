@@ -1,4 +1,4 @@
-import RestaurantSource from '../data/resto-source'
+import RestaurantSource from '../data/restaurant-source'
 import { initSwalSuccess } from './swal-initiator'
 
 const PostReview = async (url, name, review) => {

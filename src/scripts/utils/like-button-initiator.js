@@ -1,4 +1,4 @@
-import FavRestoIdb from '../data/resto-idb'
+import FavRestoIdb from '../data/restaurant-idb'
 import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/like-button'
 import { initSwalError, initSwalSuccess } from './swal-initiator'
 

@@ -53,8 +53,6 @@ const Detail = {
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id)
-
-      console.info(data)
       detailContainer.innerHTML += restoDetail(data.restaurant)
 
       LikeButtonInitiator.init({

@@ -26,6 +26,11 @@ class App {
     const page = routes[url]
     this._content.innerHTML = await page.render()
     await page.afterRender()
+    const skipLinkElem = document.querySelector('.btn-skiptocontent')
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault()
+      document.querySelector('.restaurant-card').focus()
+    })
   }
 }
 

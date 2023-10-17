@@ -29,13 +29,11 @@ const PostReview = async (url, name, review) => {
     </div>
   `
 
-  // POST review
   const reviewResponse = await RestaurantSource.postRestaurantReview(dataInput)
   console.log('🚀 ~ file: post-review.js ~ line 33 ~ PostReview ~ reviewResponse', reviewResponse)
 
   initSwalSuccess('Review Posted!')
 
-  // append newReview to the review container
   reviewContainer.innerHTML += newReview
 }
 

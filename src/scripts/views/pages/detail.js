@@ -37,7 +37,6 @@ const Detail = {
     `
   },
 
-  // Fungsi ini akan dipanggil setelah render()
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner()
 
@@ -49,28 +48,23 @@ const Detail = {
       button.classList.remove('active')
     })
 
-    // change main display to spinner
     mainContainer.style.display = 'none'
     loading.innerHTML = Spinner()
 
     try {
       const data = await RestaurantSource.getRestaurantDetail(url.id)
 
-      // use the detail data
       console.info(data)
       detailContainer.innerHTML += restoDetail(data.restaurant)
 
-      // init like button
       LikeButtonInitiator.init({
         likeButtonContainer: document.querySelector('#likeButtonContainer'),
         data
       })
 
-      // change spinner display to main
       mainContainer.style.display = 'block'
       loading.style.display = 'none'
 
-      // review form
       const btnSubmitReview = document.querySelector('#submit__review')
       const inputName = document.querySelector('#input__name')
       const inputReview = document.querySelector('#input__review')
@@ -78,10 +72,8 @@ const Detail = {
       btnSubmitReview.addEventListener('click', async (e) => {
         e.preventDefault()
 
-        // POST review
         await PostReview(url, inputName.value, inputReview.value)
 
-        // clear form input
         inputName.value = ''
         inputReview.value = ''
       })

@@ -14,7 +14,6 @@ const LikeButtonInitiator = {
     try {
       const { id } = this._restaurant
 
-      // get resto in indexed db
       const restaurant = await FavRestoIdb.getResto(id)
 
       if (restaurant) {
@@ -31,12 +30,11 @@ const LikeButtonInitiator = {
   },
 
   _renderLikeButtonTemplate() {
-    this._likeButtonContainer.innerHTML = createLikeButtonTemplate() // append html
+    this._likeButtonContainer.innerHTML = createLikeButtonTemplate()
 
     const likeButton = document.querySelector('#likeButton')
 
     likeButton.addEventListener('click', async () => {
-      // onClick fav the selected resto
       await FavRestoIdb.putResto(this._restaurant)
       initSwalSuccess('Restaurant added to Favorite!')
       this._renderButton()
@@ -44,12 +42,11 @@ const LikeButtonInitiator = {
   },
 
   _renderLikedButtonTemplate() {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate() // append html
+    this._likeButtonContainer.innerHTML = createLikedButtonTemplate()
 
     const likeButton = document.querySelector('#likeButton')
 
     likeButton.addEventListener('click', async () => {
-      // onClick unfav the selected resto
       await FavRestoIdb.deleteResto(this._restaurant.id)
       initSwalSuccess('Restaurant removed from Favorite!')
       this._renderButton()

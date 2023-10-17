@@ -15,25 +15,21 @@ const Home = {
     `
   },
 
-  // Fungsi ini akan dipanggil setelah render()
   async afterRender() {
     const loading = document.querySelector('#loading')
     const mainContainer = document.querySelector('#main')
     const listContainer = document.querySelector('.restaurant__content')
 
-    // change main display to spinner
     mainContainer.style.display = 'none'
     loading.innerHTML = Spinner()
 
     try {
       const data = await RestaurantSource.getRestaurantList() // fetch restaurant list
 
-      // loop restaurants data
       data.restaurants.forEach((restaurant) => {
         listContainer.innerHTML += restaurantCard(restaurant)
       })
 
-      // change spinner display to main
       loading.style.display = 'none'
       mainContainer.style.display = 'block'
     } catch (err) {

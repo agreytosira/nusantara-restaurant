@@ -3,9 +3,10 @@ import '../styles/main.scss'
 
 import App from './views/App'
 import swRegister from './utils/sw-register'
-import './components/navbar'
-import './components/hero'
-import './components/custom-footer'
+import './components/app-header'
+import './components/app-hero'
+import './components/main-content'
+import './components/app-footer'
 
 const app = new App({
   button: document.querySelector('.btn-toggle'),

@@ -29,7 +29,7 @@ class App {
     const skipLinkElem = document.querySelector('.btn-skiptocontent')
     skipLinkElem.addEventListener('click', (event) => {
       event.preventDefault()
-      document.querySelector('.restaurant-card').focus()
+      document.querySelector('#main').focus()
     })
   }
 }

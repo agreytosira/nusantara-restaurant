@@ -5,7 +5,7 @@ class MainContent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-        <section class="restaurant" id="main"></section>
+        <section class="restaurant" id="main" tabindex="0"></section>
       `
   }
 }

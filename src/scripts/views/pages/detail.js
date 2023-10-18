@@ -70,10 +70,13 @@ const Detail = {
       btnSubmitReview.addEventListener('click', async (e) => {
         e.preventDefault()
 
-        await PostReview(url, inputName.value, inputReview.value)
-
-        inputName.value = ''
-        inputReview.value = ''
+        if (inputName.value && inputReview.value) {
+          await PostReview(url, inputName.value, inputReview.value)
+          inputName.value = ''
+          inputReview.value = ''
+        } else {
+          initSwalError('Nama dan Review tidak boleh kosong!')
+        }
       })
     } catch (err) {
       console.error(err)

@@ -1,23 +1,15 @@
 .loader {
-  width: 8rem;
-  height: 8rem;
+  width: 6rem;
+  height: 6rem;
   clear: both;
   margin: 20px auto;
-  border: 0.5rem rgba($orange, 0.25) solid;
-  border-top: 0.5rem rgba($orange, 1) solid;
+  border: 1rem rgba($orange, 0.25) solid; /* Mengganti $orange dengan nilai warna langsung */
+  border-top: 1rem rgba($orange, 1) solid; /* Mengganti $orange dengan nilai warna langsung */
   border-radius: 50%;
-  -webkit-animation: $orange 0.6s infinite linear;
+  animation: spinner 0.6s infinite linear;
 }
 
-@-webkit-keyframes Spinner {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(359deg);
-  }
-}
-@keyframes Spinner {
+@keyframes spinner {
   from {
     transform: rotate(0deg);
   }

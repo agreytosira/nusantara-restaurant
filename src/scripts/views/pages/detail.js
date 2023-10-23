@@ -75,7 +75,7 @@ const Detail = {
           inputName.value = ''
           inputReview.value = ''
         } else {
-          initSwalError('Nama dan Review tidak boleh kosong!')
+          initSwalError("Nama and Review can't be empty!")
         }
       })
     } catch (err) {

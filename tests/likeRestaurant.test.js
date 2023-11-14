@@ -7,7 +7,7 @@ const addLikeButtonContainer = () => {
   document.body.innerHTML = '<div id="likeButtonContainer"></div>'
 }
 
-describe('Liking Resto', () => {
+describe('Liking a Resto', () => {
   beforeEach(() => {
     addLikeButtonContainer()
   })

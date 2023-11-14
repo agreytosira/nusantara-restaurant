@@ -39,8 +39,8 @@ describe('Liking Resto', () => {
 
     await FavRestaurantIdb.putRestaurant({ id: 1 })
     document.querySelector('#likeButton').dispatchEvent(new Event('click'))
-    const allResto = await FavRestaurantIdb.getAllRestaurant()
-    expect(allResto).toEqual([{ id: 1 }])
+    const allRestaurant = await FavRestaurantIdb.getAllRestaurant()
+    expect(allRestaurant).toEqual([{ id: 1 }])
 
     await FavRestaurantIdb.deleteRestaurant(1)
   })

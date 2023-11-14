@@ -8,7 +8,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["specs/**/*", "**/webpack.*"],
+  "ignorePatterns": ["tests/**/*", "**/webpack.*"],
   "rules": {
     "space-before-function-paren": 0
   }

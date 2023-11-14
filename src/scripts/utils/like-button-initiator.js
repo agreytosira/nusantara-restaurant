@@ -14,19 +14,22 @@ const LikeButtonInitiator = {
     try {
       const { id } = this._restaurant
 
-      const restaurant = await FavRestaurantIdb.getRestaurant(id)
-
-      if (restaurant) {
+      if (await this._isRestaurantExist(id)) {
         this._renderLikedButtonTemplate()
       } else {
         this._renderLikeButtonTemplate()
       }
-    } catch (err) {
-      console.error(err)
-      initSwalError(err.message)
+    } catch (error) {
+      console.error(error)
+      initSwalError(error.message)
 
-      throw new Error(err)
+      throw new Error(error)
     }
+  },
+
+  async _isRestaurantExist(id) {
+    const restaurant = await FavRestaurantIdb.getRestaurant(id)
+    return !!restaurant
   },
 
   _renderLikeButtonTemplate() {

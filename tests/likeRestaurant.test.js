@@ -49,7 +49,7 @@ describe('Liking a Restaurant', () => {
     await TestFactories.createLikeButtonInitiatorWithRestaurant({})
 
     document.querySelector('#likeButton').dispatchEvent(new Event('click'))
-    const allResto = await FavRestaurantIdb.getAllRestaurant()
-    expect(allResto).toEqual([])
+    const allRestaurant = await FavRestaurantIdb.getAllRestaurant()
+    expect(allRestaurant).toEqual([])
   })
 })

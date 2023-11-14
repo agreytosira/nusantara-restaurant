@@ -3,7 +3,7 @@ import * as TestFactories from './helpers/testFactories'
 
 global.structuredClone = (val) => JSON.parse(JSON.stringify(val))
 
-describe('Unliking a Movie', () => {
+describe('Unliking a Restaurant', () => {
   const addLikeButtonContainer = () => {
     document.body.innerHTML = '<div id="likeButtonContainer"></div>'
   }

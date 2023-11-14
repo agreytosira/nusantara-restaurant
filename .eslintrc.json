@@ -8,7 +8,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "ignorePatterns": ["tests/**/*", "**/webpack.*"],
+  "ignorePatterns": ["e2e/**/*", "tests/**/*", "**/webpack.*"],
   "rules": {
     "space-before-function-paren": 0
   }

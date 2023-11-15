@@ -6,7 +6,7 @@ Before(({ I }) => {
   I.amOnPage('/#/favorite')
 })
 
-Scenario('menghilangkan restaurant dari daftar favorit', async ({ I }) => {
+Scenario('unliking one restaurant', async ({ I }) => {
   I.see('Currently no restaurant added to favorites', '.empty h4')
 
   I.amOnPage('/')

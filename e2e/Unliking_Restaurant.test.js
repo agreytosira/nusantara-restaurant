@@ -7,12 +7,12 @@ Before(({ I }) => {
 })
 
 Scenario('menghilangkan restaurant dari daftar favorit', async ({ I }) => {
-  I.see('Currently no restaurant added to favorites', 'h4')
+  I.see('Currently no restaurant added to favorites', '.empty h4')
 
   I.amOnPage('/')
   I.seeElement('.restaurant-card')
   const restaurantCard = locate('.restaurant-card').first()
-  const restaurantCardName = await I.grabTextFrom('h5')
+  const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h5').first())
   I.click(restaurantCard)
   I.seeElement('#likeButton')
   I.click('#likeButton')
@@ -20,7 +20,7 @@ Scenario('menghilangkan restaurant dari daftar favorit', async ({ I }) => {
 
   I.amOnPage('/#/favorite')
   I.seeElement('.restaurant-card')
-  const likedRestaurantName = await I.grabTextFrom('h5')
+  const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h5').first())
   assert.strictEqual(restaurantCardName, likedRestaurantName)
 
   I.click('.restaurant-card')
@@ -29,5 +29,5 @@ Scenario('menghilangkan restaurant dari daftar favorit', async ({ I }) => {
   I.wait(1)
 
   I.amOnPage('/#/favorite')
-  I.see('Currently no restaurant added to favorites', 'h4')
+  I.see('Currently no restaurant added to favorites', '.empty h4')
 })

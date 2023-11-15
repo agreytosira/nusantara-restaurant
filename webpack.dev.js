@@ -11,7 +11,7 @@ module.exports = merge(common, {
     client: {
       overlay: {
         errors: true,
-        warnings: false
+        warnings: true
       }
     },
     compress: true

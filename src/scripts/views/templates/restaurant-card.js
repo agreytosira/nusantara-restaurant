@@ -8,7 +8,7 @@ const restaurantCard = (restaurant) => `
         </div>
         <div class="restaurant-card__body">
           <div class="restaurant-card__rating"><i class="ri-star-fill"></i> ${restaurant.rating}</div>
-          <div class="restaurant-card__name"><h5>${restaurant.name}</h5></div>
+          <div class="restaurant-card__name"><h3>${restaurant.name}</h3></div>
           <div class="restaurant-card__desc">
             <p>${restaurant.description}</p>
           </div>

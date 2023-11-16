@@ -15,7 +15,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.seeElement('.restaurant-card')
   const restaurantCard = locate('.restaurant-card').first()
-  const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h5').first())
+  const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h3').first())
   I.click(restaurantCard)
 
   I.seeElement('#likeButton')
@@ -25,7 +25,7 @@ Scenario('liking one restaurant', async ({ I }) => {
 
   I.amOnPage('/#/favorite')
   I.seeElement('.restaurant-card')
-  const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h5').first())
+  const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h3').first())
 
   assert.strictEqual(restaurantCardName, likedRestaurantName)
 })
@@ -36,7 +36,7 @@ Scenario('liking three restaurant', async ({ I }) => {
 
     I.seeElement('.restaurant-card')
     const restaurantCard = locate('.restaurant-card').at(i)
-    const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h5').at(i))
+    const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h3').at(i))
     I.click(restaurantCard)
 
     I.seeElement('#likeButton')
@@ -46,7 +46,7 @@ Scenario('liking three restaurant', async ({ I }) => {
     I.amOnPage('/#/favorite')
     I.seeElement('.restaurant-card')
 
-    const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h5').at(i))
+    const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h3').at(i))
     assert.strictEqual(restaurantCardName, likedRestaurantName)
   }
 })

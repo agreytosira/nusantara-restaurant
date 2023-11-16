@@ -12,7 +12,7 @@ Scenario('unliking one restaurant', async ({ I }) => {
   I.amOnPage('/')
   I.seeElement('.restaurant-card')
   const restaurantCard = locate('.restaurant-card').first()
-  const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h5').first())
+  const restaurantCardName = await I.grabTextFrom(locate('.restaurant-card h3').first())
   I.click(restaurantCard)
   I.seeElement('#likeButton')
   I.click('#likeButton')
@@ -20,7 +20,7 @@ Scenario('unliking one restaurant', async ({ I }) => {
 
   I.amOnPage('/#/favorite')
   I.seeElement('.restaurant-card')
-  const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h5').first())
+  const likedRestaurantName = await I.grabTextFrom(locate('.restaurant-card h3').first())
   assert.strictEqual(restaurantCardName, likedRestaurantName)
 
   I.click('.restaurant-card')

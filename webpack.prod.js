@@ -60,5 +60,12 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: [new FaviconsWebpackPlugin('./src/public/favicon.png'), new CleanWebpackPlugin(), new BundleAnalyzerPlugin()]
+  plugins: [
+    new FaviconsWebpackPlugin('./src/public/favicon.png'),
+    new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false
+    })
+  ]
 })

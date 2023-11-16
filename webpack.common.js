@@ -6,8 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: {
-    index: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/utils/sw.js')
+    index: path.resolve(__dirname, 'src/scripts/index.js')
   },
   output: {
     filename: '[name].bundle.js',
@@ -15,6 +14,18 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              url: false
+            }
+          }
+        ]
+      },
       {
         test: /\.scss$/,
         use: [
@@ -55,7 +66,8 @@ module.exports = {
     }),
     new InjectManifest({
       swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
-      swDest: 'sw.js'
+      swDest: 'sw.js',
+      maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
     })
   ]
 }

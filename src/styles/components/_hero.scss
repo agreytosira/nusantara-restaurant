@@ -1,10 +1,21 @@
+@supports (background-image: url('./images/hero-image_2-mobile.webp')) {
+  .hero {
+    background-image: url('./images/hero-image_2-mobile.webp');
+  }
+}
+
+@supports not (background-image: url('./images/hero-image_2-mobile.webp')) {
+  .hero {
+    background-image: url('./images/hero-image_2-mobile.jpg');
+  }
+}
+
 .hero {
   width: 100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('./images/hero-image_2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

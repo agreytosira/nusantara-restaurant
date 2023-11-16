@@ -104,15 +104,28 @@
     }
 
     &__city {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 0.75rem;
+      right: 0.75rem;
       padding: 0.5rem 1rem;
-      background-color: lighten($orange, 30%);
-      color: darken($orange, 5%);
+      background-color: rgba($color: #1c1c1c, $alpha: 0.75);
+      color: #fff;
       border-radius: 0.5rem;
       font-weight: 700;
       font-size: 14px;
+
+      i {
+        color: $orange;
+      }
+    }
+
+    &__name {
+      h3 {
+        font-size: 18px;
+      }
     }
   }
 }

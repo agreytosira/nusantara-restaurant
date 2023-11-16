@@ -19,6 +19,20 @@
   }
 }
 
+@media screen and (min-width: 600px) {
+  @supports (background-image: url('./images/hero-image_2-desktop.webp')) {
+    .hero {
+      background-image: url('./images/hero-image_2-desktop.webp');
+    }
+  }
+
+  @supports not (background-image: url('./images/hero-image_2-desktop.webp')) {
+    .hero {
+      background-image: url('./images/hero-image_2-desktop.jpg');
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 48px;

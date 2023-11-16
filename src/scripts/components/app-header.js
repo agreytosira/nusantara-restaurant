@@ -10,7 +10,7 @@ class AppHeader extends HTMLElement {
       <a class="navbar__brand" href="/">
         <img src="./images/logo-nusantara.svg" alt="Logo Nusantara" />
       </a>
-      <button class="btn-toggle"><i class="ri-menu-line"></i></button>
+      <button class="btn-toggle" aria-label="Mobile Menu Button"><i class="ri-menu-line"></i></button>
       <ul class="navbar__list">
         <li class="navbar__item active"><a href="/">Home</a></li>
         <li class="navbar__item"><a href="#/favorite">Favorite</a></li>

@@ -2,6 +2,7 @@ import RestaurantSource from '../data/restaurant-source'
 import { initSwalSuccess } from './swal-initiator'
 
 const PostReview = async (url, name, review) => {
+  if (!url.id || !name || !review) return
   const dataInput = {
     id: url.id,
     name,

@@ -2,6 +2,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = merge(common, {
   mode: 'production',
@@ -21,5 +22,5 @@ module.exports = merge(common, {
       }
     ]
   },
-  plugins: [new FaviconsWebpackPlugin('./src/public/favicon.png'), new CleanWebpackPlugin()]
+  plugins: [new FaviconsWebpackPlugin('./src/public/favicon.png'), new CleanWebpackPlugin(), new BundleAnalyzerPlugin()]
 })

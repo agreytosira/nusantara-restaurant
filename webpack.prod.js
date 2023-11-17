@@ -3,6 +3,7 @@ const { merge } = require('webpack-merge')
 const common = require('./webpack.common')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
+const CompressionPlugin = require('compression-webpack-plugin')
 
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
@@ -63,6 +64,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new FaviconsWebpackPlugin('./src/public/favicon.png'),
+    new CompressionPlugin(),
     new CleanWebpackPlugin()
     // Bundle Analyzer tidak digunakan karena menyebabkan proses build menjadi lama di Netlify.
     // new BundleAnalyzerPlugin({

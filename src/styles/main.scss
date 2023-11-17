@@ -10,12 +10,14 @@ $div: #333031;
   src: url('gfonts/Montserrat-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Montserrat';
   src: url('gfonts/Montserrat-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -23,12 +25,14 @@ $div: #333031;
   src: url('gfonts/PlayfairDisplay-Bold.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Playfair Display';
   src: url('gfonts/PlayfairDisplay-Black.woff2') format('woff2');
   font-weight: 900;
   font-style: normal;
+  font-display: swap;
 }
 
 * {

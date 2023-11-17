@@ -3,6 +3,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const path = require('path')
 const { InjectManifest } = require('workbox-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const PurifyCSSPlugin = require('purifycss-webpack')
+const glob = require('glob')
 
 module.exports = {
   entry: {
@@ -68,6 +70,9 @@ module.exports = {
       swSrc: path.resolve(__dirname, 'src/scripts/utils/sw.js'),
       swDest: 'sw.js',
       maximumFileSizeToCacheInBytes: 5 * 1024 * 1024
+    }),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, 'src/templates/*.html'))
     })
   ]
 }

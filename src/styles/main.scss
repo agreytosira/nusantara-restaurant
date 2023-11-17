@@ -5,6 +5,32 @@ $white: #fff;
 $textSecondary: rgba(255, 255, 255, 0.8);
 $div: #333031;
 
+@font-face {
+  font-family: 'Montserrat';
+  src: url('gfonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('gfonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('gfonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('gfonts/PlayfairDisplay-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;

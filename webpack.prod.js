@@ -66,7 +66,10 @@ module.exports = merge(common, {
   },
   plugins: [
     new FaviconsWebpackPlugin('./src/public/favicon.png'),
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      test: /\.(js|css|html)$/,
+      compressionOptions: { level: 9 }
+    }),
     new CleanWebpackPlugin()
     // Bundle Analyzer tidak digunakan karena menyebabkan proses build menjadi lama di Netlify.
     // new BundleAnalyzerPlugin({

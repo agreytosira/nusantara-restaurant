@@ -7,7 +7,7 @@ const restaurantDetail = (restaurant) => `
       <p>Details of ${restaurant.name} Restaurant</p>  
     </div>
     <div class="detail__thumbnail">
-        <img alt="Foto ${restaurant.name}" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"/>
+        <img class="lazyload" alt="Foto ${restaurant.name}" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"/>
     </div>
     <ul class="detail__info">
       <li class="detail__category">${restaurant.categories

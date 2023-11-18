@@ -8,7 +8,7 @@ class AppHeader extends HTMLElement {
     <header>
     <nav class="navbar">
       <a class="navbar__brand" href="/">
-        <img src="./images/logo-nusantara.svg" alt="Logo Nusantara" />
+        <img class="lazyload" data-src="./images/logo-nusantara.svg" alt="Logo Nusantara" />
       </a>
       <button class="btn-toggle" aria-label="Mobile Menu Button"><i class="ri-menu-line"></i></button>
       <ul class="navbar__list">

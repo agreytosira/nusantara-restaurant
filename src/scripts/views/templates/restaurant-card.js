@@ -3,7 +3,7 @@ import CONFIG from '../../global/config'
 const restaurantCard = (restaurant) => `
     <a href="#/restaurant/${restaurant.id}" class="restaurant-card">
         <div class="restaurant-card__thumbnail">
-        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="Foto Restaurantran ${restaurant.name}" />
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="Foto Restaurantran ${restaurant.name}" />
           <span class="restaurant-card__city"><i class="ri-map-pin-fill"></i>${restaurant.city}</span>
         </div>
         <div class="restaurant-card__body">

@@ -13,6 +13,7 @@ module.exports = merge(common, {
   },
   mode: 'production',
   optimization: {
+    concatenateModules: true,
     splitChunks: {
       chunks: 'all',
       minSize: 20000,
@@ -37,6 +38,7 @@ module.exports = merge(common, {
     minimize: true,
     minimizer: [
       new TerserPlugin({
+        parallel: true,
         extractComments: false,
         terserOptions: {
           output: {

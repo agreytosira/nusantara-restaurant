@@ -2,13 +2,13 @@ import 'lazysizes'
 import 'lazysizes/plugins/parent-fit/ls.parent-fit'
 import 'regenerator-runtime'
 import '../styles/main.scss'
-import '../public/fonts/remixicon.css'
 import App from './views/App'
 import swRegister from './utils/sw-register'
 import './components/app-header'
 import './components/app-hero'
 import './components/main-content'
 import './components/app-footer'
+import '../public/fonts/remixicon.scss'
 
 const app = new App({
   button: document.querySelector('.btn-toggle'),
